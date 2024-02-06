@@ -1,14 +1,12 @@
-import * as React from 'react';
+import * as React from "react";
 
-export interface IAppProps {
-}
+export interface IAppProps {}
 
-function App (props: IAppProps) {
+function App(props: IAppProps) {
   return (
     <div>
-    <h1>qds</h1>
+      <h1>APP</h1>
     </div>
-    );
-  }
-  
-  export default App;
+  );
+}
+export default App;

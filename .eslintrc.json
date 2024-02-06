@@ -7,17 +7,24 @@
         "airbnb",
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "prettier",
+        "prettier/react"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaVersion": "latest",
+        "ecmaVersion": 2023,
         "sourceType": "module"
     },
     "plugins": [
         "@typescript-eslint",
-        "react"
+        "react",
+        "prettier"
     ],
     "rules": {
+        "prettier/prettier":["error",{
+            "endOfLine": "auto",
+            "semi": false
+        }]
     }
 }
