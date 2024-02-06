@@ -1,0 +1,81 @@
+name: CI
+
+#evenements
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+#tâches 
+jobs:
+  lint:
+    runs-on: ubuntu-latest  #syteme d'exploitation
+    steps: #étapes des la tâche
+      - uses: actions/checkout@v3 #recupere le code du dépot   
+      - uses: actions/setup-node@v3 #configuration de node
+        with:
+          node-version: lts/*
+
+      - name: Install
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+
+      - name: Install
+        run: npm install
+
+      - name: Typecheck
+        run: npm run typecheck
+
+  test:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+        os: [ubuntu-latest]
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://registry.npmjs.org/
+
+      - run: npm install
+      - run: npm run test:unit
+
+  test-e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          registry-url: https://registry.npmjs.org/
+
+      - run: pnpm install
+
+      - name: Cypress
+        uses: cypress-io/github-action@v4
+        with:
+          install-command: echo
+          build: npm run build
+          start: npx vite preview --port 3333
