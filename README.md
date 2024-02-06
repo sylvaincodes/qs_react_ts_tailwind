@@ -1,22 +1,22 @@
-# Démarrer un projet avec Réact Typescript et Tailwind CSS en 2024
+# Démarrer un projet avec Vite-Typescript-Tailwind CSS avec un Linter Rapidement.
 
 ![Screenshot](https://github.com/sylvaincodes/qs_react_ts_tailwind/blob/master/public/images/psd.png)
 
-C'est un projet vide pour vous lancer dans le développement d'une application web rapidement.
+C'est un projet vide qui utilise le moteur de développement Vite pour vous lancer dans le développement d'une projet web rapidement avec Réact Js.
 
-Plusieurs outils ont déja configurés
+## Plusieurs outils sont déja pré-configurés
 -------------------------------------------------------------------
 
 - Vite             
 - Réact, Réact DOM                
 - Typescript         npm run typecheck
-- EsLint             npm run lint
+- EsLint de Airbnb   npm run lint
 - Jest               npm run test
 - Tailwind Css       commence par écrire ton code css dans le composant App.tsx
 - CI                 git push 
 
 
-Comment l'utiliser
+### Comment l'utiliser
 -------------------------------------------------------------------
 
 1- Cloner le projet 
