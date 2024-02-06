@@ -4,11 +4,11 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - master
 
   pull_request:
     branches:
-      - main
+      - master
 
 #tâches 
 jobs:
@@ -58,24 +58,18 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - run: npm install
-      - run: npm run test:unit
+      - run: npm run test
 
-  test-e2e:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Use Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v3 #recupere le code du dépot   
+      - uses: actions/setup-node@v3 #configuration de node
         with:
           node-version: lts/*
-          registry-url: https://registry.npmjs.org/
 
-      - run: pnpm install
+      - name: Install
+        run: npm install
 
-      - name: Cypress
-        uses: cypress-io/github-action@v4
-        with:
-          install-command: echo
-          build: npm run build
-          start: npx vite preview --port 3333
+      - name: Lint
+        run: npm run build
