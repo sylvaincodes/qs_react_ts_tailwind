@@ -2,10 +2,9 @@
 
 ![Screenshot](https://github.com/sylvaincodes/qs_react_ts_tailwind/blob/master/public/images/psd.png)
 
-C'est un projet vide qui utilise le moteur de développement Vite pour vous lancer dans le développement d'une projet web rapidement avec Réact Js.
+C'est un projet vide qui utilise le moteur de développement Vite pour vous lancer dans le développement d'un projet web rapidement avec Réact Js.
 
 ## Plusieurs outils sont déja pré-configurés
--------------------------------------------------------------------
 
 - Vite             
 - Réact, Réact DOM                
@@ -17,7 +16,7 @@ C'est un projet vide qui utilise le moteur de développement Vite pour vous lanc
 
 
 ### Comment l'utiliser
--------------------------------------------------------------------
+
 
 - Cloner le projet 
 - Supprimer le dépot git si il est présent 
