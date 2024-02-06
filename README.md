@@ -1,4 +1,4 @@
-## Démarrer un projet avec Vite-Typescript-Tailwind CSS avec un Linter Rapidement.
+## Démarrer un projet Réact Js avec Vite-Typescript-Tailwind CSS avec un Linter Rapidement.
 
 ![Screenshot](https://github.com/sylvaincodes/qs_react_ts_tailwind/blob/master/public/images/psd.png)
 
