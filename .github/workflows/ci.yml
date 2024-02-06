@@ -63,12 +63,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Use Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v3 #recupere le code du dépot   
+      - uses: actions/setup-node@v3 #configuration de node
         with:
-          node-version: 16
-          registry-url: https://npm.pkg.github.com/
-          
-      - run: npm run build
+          node-version: lts/*
+
+      - name: Install
+        run: npm install
+
+      - name: Lint
+        run: npm run build
