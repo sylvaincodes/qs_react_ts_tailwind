@@ -1,42 +1,39 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "plugins": ["@typescript-eslint", "prettier"],
+  "extends": ["airbnb", "airbnb-typescript", "airbnb/hooks", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "airbnb",
-        "airbnb-typescript",
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:react/recommended",
-        "prettier"
-    ],
-    "parser": "@typescript-eslint/parser",
-    
-    "parserOptions": {
-        "ecmaVersion": 2023,
-        "sourceType": "module",
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json",
+    "warnOnUnsupportedTypeScriptVersion": false
+  },
+  "settings": {
+   // some settings
+  },
+  "rules": {
+    // some rules
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.ts"],
+      "parserOptions": {
         "project": "./tsconfig.json"
+      }
     },
-    "plugins": [
-        "@typescript-eslint",
-        "react",
-        "prettier"
-    ],
-    "rules": {
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx",".ts", ".tsx"] }],
-        "prettier/prettier":["error",{
-            "endOfLine": "auto",
-            "semi": true // ajouter une virgule à la fin
-        }]
-    },
-    "import/no-extraneous-dependencies":[
-        "error",
-        {
-           "devDependencies":[
-              "**/*.test.ts",
-              "**/*.test.tsx"
-           ]
-        }
-      ]
+    {
+      "files": ["__tests__/**/*.test.ts"],
+      "parserOptions": {
+        "project": "./tsconfig.test.json"
+      }
+    }
+  ]
 }

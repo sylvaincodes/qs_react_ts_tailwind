@@ -3,13 +3,13 @@ import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/jest-globals";
 import App from "../App";
 
-describe("", () => {
-  //first test
+describe("Home", () => {
+  // first test
   it("should render without crash", () => {
-    //Arrange
+    // Arrange
     const { container } = render(<App />);
 
-    //Assertions
+    // Assertions
     expect(container).toBeDefined();
   });
 });

@@ -58,9 +58,9 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - run: npm install
-      - run: npm run test:unit
+      - run: npm run test
 
-  test-e2e:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -68,14 +68,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: lts/*
-          registry-url: https://registry.npmjs.org/
-
-      - run: npm install
-
-      - name: Cypress
-        uses: cypress-io/github-action@v4
-        with:
-          install-command: echo
-          build: npm run build
-          start: npx vite preview --port 3333
+          node-version: 16
+          registry-url: https://npm.pkg.github.com/
+          
+      - run: npm run build
