@@ -29,5 +29,14 @@
             "endOfLine": "auto",
             "semi": true // ajouter une virgule à la fin
         }]
-    }
+    },
+    "import/no-extraneous-dependencies":[
+        "error",
+        {
+           "devDependencies":[
+              "**/*.test.ts",
+              "**/*.test.tsx"
+           ]
+        }
+      ]
 }
