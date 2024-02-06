@@ -7,7 +7,7 @@
     "test": "jest",
     "dev": "env-cmd -f ./src/.env.dev vite",
     "start": "env-cmd -f ./src/.env vite",
-    "lint": "eslint .",
+    "lint": "eslint --fix",
     "typecheck": "tsc",
     "build" : "vite build",
     "preview": "vite preview"

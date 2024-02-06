@@ -10,5 +10,6 @@
         "skipLibCheck": true,
         "strict": true,
         "allowJs": true
-    }
+    },
+    "ignorePatterns": [".eslintrc.js"],
 }
