@@ -5,16 +5,18 @@
     },
     "extends": [
         "airbnb",
+        "airbnb-typescript",
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
-        "prettier",
-        "prettier/react"
+        "prettier"
     ],
     "parser": "@typescript-eslint/parser",
+    
     "parserOptions": {
         "ecmaVersion": 2023,
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "./tsconfig.json"
     },
     "plugins": [
         "@typescript-eslint",
@@ -22,9 +24,10 @@
         "prettier"
     ],
     "rules": {
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx",".ts", ".tsx"] }],
         "prettier/prettier":["error",{
             "endOfLine": "auto",
-            "semi": false
+            "semi": true // ajouter une virgule à la fin
         }]
     }
 }
